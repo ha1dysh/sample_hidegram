@@ -1,0 +1,184 @@
+.main {
+	width: 100%;
+	height: 100%;
+
+	background-color: #000;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	@media (min-width: 640px) {
+		width: 75%;
+	}
+
+	& .header {
+		position: sticky;
+		height: 60px;
+		padding: 12px;
+
+		& h1 {
+			margin-bottom: 4px;
+			font-size: 16px;
+			font-weight: 500;
+		}
+
+		& p {
+			font-size: 14px;
+			color: #8e8e93;
+		}
+
+		border-bottom: 1px solid #232323;
+	}
+
+	& .messages {
+		width: 100%;
+		height: calc(100% - 60px - 50px);
+		padding: 16px;
+		overflow-y: scroll;
+
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 8px;
+
+		list-style-type: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		& li {
+			background-color: #1b1b1b;
+			padding: 8px;
+			border-radius: 4px;
+
+			& .text {
+				margin-bottom: 4px;
+			}
+
+			& .date {
+				font-size: 12px;
+				font-weight: 300;
+				opacity: 0.5;
+			}
+		}
+
+		& .me {
+			max-width: 66.66%;
+			align-self: flex-end;
+
+			@media (min-width: 640px) {
+				max-width: 45%;
+			}
+
+			& .date {
+				text-align: right;
+			}
+		}
+
+		& .notMe {
+			max-width: 66.66%;
+			align-self: flex-start;
+
+			@media (min-width: 640px) {
+				max-width: 45%;
+			}
+		}
+	}
+
+	& nav {
+		position: sticky;
+		bottom: 0;
+
+		width: 100%;
+		height: 50px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 12px;
+
+		border-top: solid 1px #232323;
+		background-color: #000;
+
+		&::after {
+			content: "2";
+			position: absolute;
+			top: 14%;
+			left: 65%;
+			width: 20px;
+			height: 20px;
+			padding-top: 1px;
+			padding-left: 4px;
+			border: 2px solid #000;
+			border-radius: 50%;
+			font-size: 12px;
+			background-color: red;
+		}
+
+		@media (min-width: 640px) {
+			display: none;
+		}
+
+		& img {
+			width: 25px;
+			height: 25px;
+			cursor: pointer;
+		}
+	}
+
+	& form {
+		position: sticky;
+		bottom: 0;
+		height: 50px;
+
+		display: flex;
+		border-top: 1px solid #232323;
+
+		@media (max-width: 640px) {
+			display: none;
+		}
+
+		.upload {
+			position: relative;
+			display: flex;
+			width: 60px;
+			cursor: pointer;
+
+			& img {
+				position: absolute;
+				top: 14px;
+				left: 13px;
+				width: 22px;
+				height: 22px;
+			}
+
+			& input {
+				opacity: 0;
+			}
+
+			&:hover {
+				background-color: #111;
+			}
+		}
+
+		& input {
+			width: 100%;
+			padding: 8px;
+
+			border: none;
+			outline: none;
+			color: #fff;
+			background-color: #000;
+		}
+
+		& button {
+			width: 150px;
+			border: none;
+			outline: none;
+			color: #567dff;
+			background-color: #000;
+			cursor: pointer;
+		}
+	}
+}

@@ -1,0 +1,140 @@
+.sidebar {
+	width: 25%;
+	height: 100%;
+
+	border-right: 1px solid #232323;
+	background-color: #000;
+
+	@media (max-width: 640px) {
+		display: none;
+	}
+
+	& .header {
+		width: 100%;
+		height: 60px;
+		padding: 12px;
+
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		& input {
+			width: 100%;
+			height: 36px;
+			padding-left: 35px;
+
+			outline: none;
+			border: none;
+			border-radius: 12px;
+			background: url("../images/search-icon.svg") no-repeat;
+			background-size: 15px 15px;
+			background-position: 10px center;
+			background-color: #1b1b1b;
+
+			color: #fff;
+		}
+
+		& img {
+			width: 20px;
+			height: 20px;
+			cursor: pointer;
+		}
+	}
+
+	& .contacts {
+		height: calc(100% - 60px - 50px);
+		padding: 0;
+
+		display: flex;
+		flex-direction: column;
+		overflow: scroll;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		& li {
+			padding: 12px;
+
+			display: flex;
+			flex-direction: column;
+
+			list-style-type: none;
+			cursor: pointer;
+
+			&:hover {
+				background-color: #ffffff0f;
+			}
+
+			& .title {
+				display: flex;
+				justify-content: space-between;
+
+				& .name {
+					font-weight: 500;
+				}
+
+				& .date {
+					font-size: 13px;
+					color: #fafafa40;
+				}
+			}
+
+			& .messageInfo {
+				display: flex;
+				justify-content: space-between;
+				align-items: end;
+				gap: 4px;
+
+				& .message {
+					max-width: 90%;
+					font-size: 15px;
+					color: #8e8e93;
+					-webkit-line-clamp: 1;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+				}
+
+				& .count {
+					width: 20px;
+					height: 20px;
+
+					display: grid;
+					place-content: center;
+
+					font-size: 12px;
+					border-radius: 50%;
+					background-color: #567dff;
+				}
+			}
+		}
+
+		& .underline:not(:last-child) {
+			margin-left: 12px;
+			border-bottom: solid 1px #232323;
+		}
+	}
+
+	& nav {
+		position: sticky;
+		bottom: 0;
+
+		width: 100%;
+		height: 50px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 12px;
+
+		border-top: solid 1px #232323;
+		background-color: #000;
+
+		& img {
+			width: 25px;
+			height: 25px;
+			cursor: pointer;
+		}
+	}
+}
